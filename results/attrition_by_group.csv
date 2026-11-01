@@ -1,0 +1,25 @@
+variable,group,attrition_rate_pct,employees
+OverTime,No,10.4,1054
+OverTime,Yes,30.5,416
+BusinessTravel,Non-Travel,8.0,150
+BusinessTravel,Travel_Frequently,24.9,277
+BusinessTravel,Travel_Rarely,15.0,1043
+MaritalStatus,Divorced,10.1,327
+MaritalStatus,Married,12.5,673
+MaritalStatus,Single,25.5,470
+JobSatisfaction (1=low),1,22.8,289
+JobSatisfaction (1=low),2,16.4,280
+JobSatisfaction (1=low),3,16.5,442
+JobSatisfaction (1=low),4,11.3,459
+Years at company,0-2,29.8,342
+Years at company,3-5,13.8,434
+Years at company,6-10,12.3,448
+Years at company,11+,8.1,246
+Monthly income quartile,Q1 (lowest),29.3,369
+Monthly income quartile,Q2,14.2,366
+Monthly income quartile,Q3,10.6,367
+Monthly income quartile,Q4 (highest),10.3,368
+Distance from home (km),1-5,13.8,632
+Distance from home (km),6-10,14.5,394
+Distance from home (km),11-20,20.0,240
+Distance from home (km),21+,22.1,204

@@ -1,0 +1,9 @@
+,count,mean,std,min,max
+Age,1470.0,36.92,9.14,18.0,60.0
+MonthlyIncome,1470.0,6502.93,4707.96,1009.0,19999.0
+DistanceFromHome,1470.0,9.19,8.11,1.0,29.0
+TotalWorkingYears,1470.0,11.28,7.78,0.0,40.0
+YearsAtCompany,1470.0,7.01,6.13,0.0,40.0
+YearsInCurrentRole,1470.0,4.23,3.62,0.0,18.0
+YearsSinceLastPromotion,1470.0,2.19,3.22,0.0,15.0
+PercentSalaryHike,1470.0,15.21,3.66,11.0,25.0

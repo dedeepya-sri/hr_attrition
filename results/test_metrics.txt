@@ -1,0 +1,37 @@
+Model: Logistic Regression
+Chosen threshold: 0.54
+
+=== Test set @ cutoff default 0.50 ===
+              precision    recall  f1-score   support
+
+      Stayed       0.92      0.78      0.85       247
+        Left       0.36      0.66      0.47        47
+
+    accuracy                           0.76       294
+   macro avg       0.64      0.72      0.66       294
+weighted avg       0.83      0.76      0.79       294
+
+Confusion matrix  [[TN FP], [FN TP]]:
+[[193  54]
+ [ 16  31]]
+
+=== Test set @ cutoff chosen 0.54 ===
+              precision    recall  f1-score   support
+
+      Stayed       0.93      0.83      0.88       247
+        Left       0.43      0.66      0.52        47
+
+    accuracy                           0.81       294
+   macro avg       0.68      0.75      0.70       294
+weighted avg       0.85      0.81      0.82       294
+
+Confusion matrix  [[TN FP], [FN TP]]:
+[[206  41]
+ [ 16  31]]
+
+Test ROC-AUC: 0.808
+
+95% bootstrap intervals (chosen cutoff):
+  Recall     0.662  [0.526 - 0.795]
+  Precision  0.431  [0.321 - 0.548]
+  ROC-AUC    0.809  [0.732 - 0.881]
