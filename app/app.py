@@ -10,6 +10,126 @@ ROOT = Path(__file__).resolve().parent.parent
 
 st.set_page_config(page_title="Employee Attrition Risk", page_icon="📊", layout="wide")
 
+st.markdown(
+    """
+    <style>
+    :root {
+        color-scheme: dark;
+        --ink: #e6edf5;
+        --muted: #a0afbf;
+        --accent: #42c7b5;
+        --accent-dark: #66d8c8;
+        --canvas: #101820;
+        --surface: #1a2631;
+        --line: #334351;
+    }
+
+    .stApp, [data-testid="stAppViewContainer"] {
+        background: var(--canvas);
+        color: var(--ink);
+    }
+
+    [data-testid="stMarkdownContainer"], label, p, li {
+        color: var(--ink);
+    }
+
+    .block-container {
+        max-width: 1440px;
+        padding-top: 2.2rem;
+        padding-bottom: 3rem;
+    }
+
+    h1, h2, h3 {
+        color: var(--ink);
+        letter-spacing: -0.025em;
+    }
+
+    h1 {
+        font-weight: 750;
+    }
+
+    [data-testid="stCaptionContainer"] {
+        color: var(--muted);
+    }
+
+    [data-testid="stMetric"] {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 1rem 1.15rem;
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.16);
+    }
+
+    [data-testid="stMetricLabel"] {
+        color: var(--muted);
+    }
+
+    [data-testid="stMetricValue"] {
+        color: var(--accent-dark);
+    }
+
+    [data-testid="stTabs"] [role="tablist"] {
+        gap: 0.4rem;
+        border-bottom: 1px solid var(--line);
+    }
+
+    [data-testid="stTabs"] button[role="tab"] {
+        color: var(--muted);
+        border-radius: 9px 9px 0 0;
+    }
+
+    [data-testid="stTabs"] button[role="tab"][aria-selected="true"] {
+        color: var(--accent-dark);
+        border-bottom-color: var(--accent);
+    }
+
+    [data-testid="stSelectbox"] [data-baseweb="select"] > div,
+    [data-testid="stNumberInput"] [data-baseweb="input"] > div {
+        border-color: var(--line);
+        border-radius: 9px;
+        background: var(--surface);
+        color: var(--ink);
+    }
+
+    [data-baseweb="popover"], [role="listbox"] {
+        background: var(--surface);
+        color: var(--ink);
+    }
+
+    [data-baseweb="menu"] [role="option"] {
+        color: var(--ink);
+    }
+
+    [data-baseweb="menu"] [role="option"]:hover {
+        background: #263745;
+    }
+
+    [data-testid="stNumberInput"] button {
+        color: var(--ink);
+        background: var(--surface);
+        border-color: var(--line);
+    }
+
+    [data-testid="stSlider"] [role="slider"] {
+        background: var(--accent);
+    }
+
+    [data-testid="stProgressBar"] > div > div {
+        background-color: var(--accent);
+    }
+
+    [data-testid="stAlert"] {
+        border-radius: 10px;
+    }
+
+    [data-testid="stImage"], [data-testid="stExpander"] {
+        border-radius: 12px;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
 
 @st.cache_resource
 def load_bundle():
@@ -117,9 +237,15 @@ with tab_predict:
         else:
             fig, ax = plt.subplots(figsize=(5, 0.45 * len(shown) + 1.2))
             ax.barh([f"{c} = {values[c]}" for c in shown.index], shown.values,
-                    color=["#B04040" if v > 0 else "#1F3864" for v in shown.values])
-            ax.axvline(0, color="black", linewidth=0.8)
-            ax.set_xlabel("Score points added (red) or removed (blue)")
+                    color=["#d46a5e" if v > 0 else "#147d78" for v in shown.values])
+            ax.axvline(0, color="#637789", linewidth=0.8)
+            ax.set_xlabel("Score points added (coral) or removed (teal)")
+            ax.set_facecolor("#1a2631")
+            fig.patch.set_facecolor("#1a2631")
+            ax.spines[["top", "right", "left"]].set_visible(False)
+            ax.spines["bottom"].set_color("#334351")
+            ax.tick_params(colors="#a0afbf")
+            ax.xaxis.label.set_color("#a0afbf")
             fig.tight_layout()
             st.pyplot(fig)
             plt.close(fig)
